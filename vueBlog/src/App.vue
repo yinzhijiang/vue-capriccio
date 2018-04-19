@@ -13,7 +13,7 @@
           <el-footer height="120px">
             <p>
               <small>
-                © 2016 Blend Free HTML5. All Rights Reserved.
+                © 2018 点点暖阳在北京 本博客起步阶段,谢谢光临。 All Rights Reserved.
               </small>
             </p>
             <p>
