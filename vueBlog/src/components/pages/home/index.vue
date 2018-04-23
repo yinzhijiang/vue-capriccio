@@ -12,15 +12,29 @@
       <p class="intro-position"><span>初来乍到</span><span>多多指教</span></p>
       <p class="intro-address">yinzhi@163.com</p>
     </div>
+    <skill-view></skill-view>
+    <resume-view></resume-view>
+    <portfolio-view></portfolio-view>
+    <contact-view></contact-view>
   </div>
 </template>
 
 <script>
+import skillView from './skill'
+import contactView from './contactMe'
+import resumeView from './resume'
+import portfolioView from './portfolio'
 export default {
   data () {
     return {
       // src : require('../../../assets/images/img-1.jpg')
     }
+  },
+  components: {
+    skillView,
+    contactView,
+    resumeView,
+    portfolioView
   }
 }
 </script>

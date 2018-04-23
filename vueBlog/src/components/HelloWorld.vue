@@ -33,6 +33,7 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  text-transform: uppercase
 }
 ul {
   list-style-type: none;
