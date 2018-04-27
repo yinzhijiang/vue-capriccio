@@ -22,7 +22,9 @@ export default {
     line-height: 18px;
 }
 .contact_button{
+    background-color:rgba(34, 136, 150, 0.7);
     text-shadow: 1px 1px #000;
+    border: 2px solid rgba(34, 136, 150, 0.7);
 }
 .contact_button:hover{
     background: rgba(34, 136, 150, 0.9);

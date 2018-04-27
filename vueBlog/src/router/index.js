@@ -4,6 +4,7 @@ import Home from '@/components/pages/home'
 import Blog from '@/components/pages/blog'
 import Contact from '@/components/pages/contact'
 import about from '@/components/pages/about'
+import tags from '@/components/pages/tags'
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +34,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: about
+    },
+    {
+      path: '/tags',
+      name: 'tags',
+      component: tags
     }
   ]
 })
