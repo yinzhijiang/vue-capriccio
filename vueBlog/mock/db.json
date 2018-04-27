@@ -1,0 +1,42 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": [{
+            "id": 1, 
+            "name": "html" 
+        },
+        {
+            "id": 2,
+            "name": "css" 
+        },
+        {
+            "id": 3,
+             "name": "js"
+        },{
+            "id": 4, 
+            "name": "canvas" 
+        },{
+            "id": 5, 
+            "name": "node" 
+        },
+        {
+            "id": 6, 
+            "name": "audio" 
+        },{
+            "id": 7,
+            "name": "echarts"
+        },{
+            "id": 8, 
+            "name": "svg" 
+        },{
+            "id": 9,
+            "name": "jquery"
+        },{
+            "id": 10, 
+            "name": "openlayers"
+        }]
+  }
