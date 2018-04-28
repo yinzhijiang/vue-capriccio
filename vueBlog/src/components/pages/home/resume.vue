@@ -1,15 +1,16 @@
 <template>
   <div class="resume">
     <h3>
-      resume
+      履历
     </h3>
-    <h2>More of my Credentials.</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur incidunt ullam possimus reiciendis recusandae cupiditate iste excepturi dolor commodi eligendi id deserunt quod qui delectus molestiae nemo, sed expedita sequi?</p>
+    <h2>一些我的履历证明.</h2>
+    <p>从15年实习开始我已经从事该工作快三年了，而当真正把时间榨干，花在前端工作上的时间却没有那么久，还好自己有在项目空闲期好好的学习，也不枉过了这几年。</p>
+    <p>当然这几年的工作与学习，让我在技术上和生活上都学到了很多。</p>
     <div class="experience"  v-for="(val, key, index) in resumeData" :key='index'>
       <h3>{{val.resume}}</h3>
       <div class="timeline"  v-for="(value, index1) in val.data" :key='index1'>
         <!-- <input id="content" v-model='value' class="input-class" @click='contentText' type="text"> -->
-        <div class="timeline-icon"><i :class="val.icon"></i></div>
+        <div class="timeline-icon"><i :class="value.icon"></i></div>
         <div class="timeline-header">
           <h3>{{value.company}}</h3>
           <p>{{value.time}}</p>
@@ -29,35 +30,27 @@ export default {
     return {
       value: '',
       resumeData: [{
-        resume: 'Work Experience',
-        icon: 'fa fa-briefcase',
+        resume: '工作经历',
         data: [{
-          company: 'XXXXcompany1',
+          icon: 'fa fa-briefcase',
+          company: '兴华永恒（北京）',
           time: '2016.8--至今',
-          post: 'awsersom engerniar',
-          dec: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa est quidem iusto porro cupiditate ea, rem quibusdam laudantium officia aliquam! Aperiam culpa nihil dolorem nemo distinctio asperiores minima. Voluptate.'
+          post: '可视化开发工程师',
+          dec: '负责前端可视化页面的设计与实现。'
         },
         {
+          icon: 'fa fa-briefcase',
           company: 'XXXXcompany2',
           time: '2015.8--2016.8',
-          post: 'engerniar',
-          dec: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa est quidem iusto porro cupiditate ea, rem quibusdam laudantium officia aliquam! Aperiam culpa nihil dolorem nemo distinctio asperiores minima. Voluptate.'
-        }]
-      },
-      {
-        resume: 'education',
-        icon: 'fa fa-graduation-cap',
-        data: [{
-          company: 'XXXschool',
-          time: '2016.8--至今',
-          post: 'awsersom engerniar',
-          dec: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa est quidem iusto porro cupiditate ea, rem quibusdam laudantium officia aliquam! Aperiam culpa nihil dolorem nemo distinctio asperiores minima. Voluptate.'
+          post: '前端开发实习',
+          dec: '绘制静态页面，学习一些基本的前端知识技能。'
         },
         {
-          company: 'school3',
-          time: '2015.8--2016.8',
-          post: 'engerniar',
-          dec: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa est quidem iusto porro cupiditate ea, rem quibusdam laudantium officia aliquam! Aperiam culpa nihil dolorem nemo distinctio asperiores minima. Voluptate.'
+          icon: 'fa fa-graduation-cap',
+          company: '淮南示范学院',
+          time: '2012.9--2016.6',
+          post: '电子信息工程',
+          dec: '收获了几个挚友，在校期间获得过很多荣誉证书。'
         }]
       }]
     }
@@ -77,7 +70,7 @@ export default {
 <style scoped>
 .resume{
   width: 80%;
-  height: 200%;
+  height: 150%;
   margin: 0 auto;
 }
 .experience{
@@ -89,7 +82,7 @@ export default {
   color: rgb(34, 136, 150);
 }
 .timeline{
-  height: 45%;
+  height: 60%;
   position: relative;
 }
 .timeline::before{
@@ -136,7 +129,7 @@ export default {
   color:white;
 }
 .timeline-header{
-  width: 35%;
+  width: 38%;
   text-align: right;
   float: left;
   padding-right: 90px;

@@ -81,6 +81,9 @@ export default {
     text-transform:none;
     text-shadow: 4px 4px #000;
   }
+  .card_block p{
+    text-align: center;
+  }
   .intro-position span,.intro-address{
     color: blanchedalmond;
     font-size: 18px;

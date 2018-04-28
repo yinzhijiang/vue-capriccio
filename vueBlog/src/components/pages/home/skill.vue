@@ -3,25 +3,22 @@
     <div class="info">
       <dl class="introduce">
         <dt>
-          <img :src="require('../../../assets/images/img-1.jpg')" alt="">
+          <img :src="require('../../../assets/header.png')" alt="">
         </dt>
         <dd>
-          <h3>about</h3>
-          <h2>Let me introduce myself.</h2>
+          <h3>关于我</h3>
+          <h2>让我自我介绍一下.</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium doloremque corporis, porro ipsum consequatur magni rem optio omnis blanditiis praesentium aliquam corrupti quo architecto debitis officia, quaerat repellendus rerum et!
+            蒋银芝，一名90后，坐标北京。毕业于淮南师范学院（本科），电子信息工程专业。特别喜欢当自己的代码在浏览器呈现出来的效果时，哈，好神奇……
+          </p>
+          <p>
+            兴趣众多，然无一精通。正努力成为一个有趣的人。
           </p>
         </dd>
       </dl>
     </div>
     <div class="skill-info">
       <div id="main"></div>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
     </div>
   </div>
 </template>
@@ -80,7 +77,7 @@ export default {
             hoverAnimation: false,
             data: [
               {
-                value: 390,
+                value: 290,
                 name: 'html'
               },
               {
@@ -137,7 +134,7 @@ export default {
             itemStyle: dataStyle,
             data: [
               {
-                value: 90,
+                value: 80,
                 name: 'vue'
               },
               {
@@ -156,7 +153,7 @@ export default {
             itemStyle: dataStyle,
             data: [
               {
-                value: 300,
+                value: 100,
                 name: 'echarts'
               },
               {
@@ -199,12 +196,14 @@ export default {
 }
 .introduce dd p{
   line-height: 30px;
+  text-align: left;
+  text-indent: 2em;
 }
 .introduce dt img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border: 1px solid rgb(34, 136, 150);
-  border-radius: 50px;
+  border-radius: 50%;
 }
 .skill-info{
   height: 65%;

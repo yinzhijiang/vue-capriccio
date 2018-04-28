@@ -11,7 +11,7 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "mock": "json-server --watch mock/db.json",
+    "mock": "json-server --watch mock/db.json --m mock/post-to-get.js",
     "mockdev": "npm run mock & npm run dev"
   },
   "dependencies": {

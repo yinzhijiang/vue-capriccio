@@ -2,6 +2,25 @@
   <div class='tag'>
     <h2>tags</h2>
     <h3>mock数据</h3>
+    <div class="tagList">
+      <ul class="listData">
+        <li v-for="(val) in this.listData" :key="val.id"><a><el-button type="danger">{{val.name}}</el-button></a></li>
+        <li><a><el-button @click="addtag" type="danger">+</el-button></a></li>
+      </ul>
+      <el-form v-show="showForm" :model="numberValidateForm" ref="numberValidateForm" label-width="80px" class="demo-ruleForm">
+        <el-form-item
+          label="TagName"
+          prop="text"
+        >
+          <el-input type="text" v-model.number="numberValidateForm.text" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
+          <el-button type="danger" @click="resetForm('numberValidateForm')">重置</el-button>
+          <el-button @click="closeForm">关闭</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
     <div class="select">
       <input id="_input" type="text" name="" @click="inputShow">
       <div v-show="showTag" class="tags" id="listTag">
@@ -10,9 +29,6 @@
         </ul>
       </div>
     </div>
-    <ul class="listData">
-      <li v-for="(val) in this.listData" :key="val.id"><a><el-button type="danger">{{val.name}}</el-button></a></li>
-    </ul>
   </div>
 </template>
 
@@ -22,15 +38,20 @@ export default {
     return {
       items: ['12', 'we', '45', 'dfgdfg', 'fgh', 'axzxc', 'vnvcv'],
       showTag: false,
-      listData: []
+      showForm: false,
+      listData: [],
+      numberValidateForm: {
+        text: ''
+      }
     }
   },
   methods: {
     getPoint () {
       let _this = this
       window.axios.get('/api/profile')
-        .then(function (response) {
+        .then(response => {
           _this.listData = response.data
+          console.log(_this.listData)
         })
         .catch(function (err) {
           console.log(err)
@@ -48,6 +69,33 @@ export default {
         var length = text.length
         document.getElementById('_input').value = document.getElementById('_input').value.slice(0, index) + document.getElementById('_input').value.slice(length + index + 1)
       }
+    },
+    addtag () {
+      this.showForm = !this.showForm
+    },
+    closeForm () {
+      this.showForm = false
+    },
+    submitForm (formName) {
+      let _this = this
+      this.$refs[formName].validate((valid) => {
+        if (valid && _this.numberValidateForm.text !== '') {
+          window.axios.post('/api/profile', {
+            'name': _this.numberValidateForm.text
+          }).then(
+            _this.getPoint(),
+            m => {
+              _this.listData = m.data
+            }
+          )
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    resetForm (formName) {
+      this.$refs[formName].resetFields()
     }
   },
   mounted () {
@@ -58,10 +106,7 @@ export default {
 
 <style>
 .select{
-  width: 400px;
-  height: 300px;
-  /* border: 1px solid */
-  /* background: rgba(0,0,0,0.2); */
+  /* position: relative; */
 }
 #_input{
   outline: none;
@@ -70,10 +115,11 @@ export default {
   border: 1px solid rgba(0,0,0,0.2);
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  padding-left: 18px;
 }
 .tags{
   width: 80%;
-  height: 80%;
+  height: 300px;
   margin: 20px auto 0;
   border: 1px solid rgba(0,0,0,0.2);
   box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
@@ -96,7 +142,7 @@ export default {
 #listCrap li{
   width: 40%;height: 35px;
   float: left;
-  margin: 4%;
+  margin: 3%;
   position: relative;
 }
 #listCrap li input{
@@ -119,7 +165,19 @@ export default {
   /* color: white; */
   /* text-shadow: 1px 1px 2px #909090; */
 }
-.listData li:hover{
-  /* background: rgba(34, 136, 150, 0.3); */
+.tagList{
+  position: relative;
+}
+.demo-ruleForm{
+  width: 80%;
+  position: absolute;
+  background: rgba(0,0,0,0.4);
+  padding: 4% 4% 2%;
+  /* bottom: 0; */
+  left: 50%;
+  margin-left: -44%;
+}
+.el-form-item__label{
+  color:white;
 }
 </style>
