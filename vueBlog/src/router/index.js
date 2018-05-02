@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/pages/home'
-import Blog from '@/components/pages/blog'
-import Contact from '@/components/pages/contact'
-import about from '@/components/pages/about'
-import tags from '@/components/pages/tags'
+const Home = () => import('../components/pages/home')
+const Blog = () => import('../components/pages/blog')
+const Contact = () => import('../components/pages/contact')
+const about = () => import('../components/pages/about')
+const tags = () => import('../components/pages/tags')
 Vue.use(Router)
 
 export default new Router({

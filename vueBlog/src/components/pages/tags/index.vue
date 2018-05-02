@@ -105,9 +105,6 @@ export default {
 </script>
 
 <style>
-.select{
-  /* position: relative; */
-}
 #_input{
   outline: none;
   width: 80%;

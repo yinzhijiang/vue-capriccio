@@ -134,6 +134,9 @@ export default {
   float: left;
   padding-right: 90px;
 }
+.timeline-header p{
+  text-align: right;
+}
 .timeline-body{
   width: 60%;
   padding-left: 60px;
