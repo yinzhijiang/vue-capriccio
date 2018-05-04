@@ -70,12 +70,12 @@ export default {
 <style scoped>
 .resume{
   width: 80%;
-  height: 150%;
-  margin: 0 auto;
+  height: 100%;
+  margin: 20px auto 0;
 }
 .experience{
   width: 100%;
-  height: 40%;
+  height: 34%;
 }
 .experience h4{
   margin-top: 40px;
@@ -89,7 +89,7 @@ export default {
   content: '';
   height: 100%;
   display: block;
-  width: 1px;
+  width: 3px;
   background: rgba(34, 136, 150, 0.7);
   position: absolute;
   left: 35%;

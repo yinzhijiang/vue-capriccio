@@ -8,7 +8,7 @@
             <h2>VUEBLOG</h2>
           </el-header>
           <el-main>
-            <Menu></Menu>
+            <menu-view></menu-view>
           </el-main>
           <el-footer height="120px">
             <p>
@@ -35,11 +35,11 @@
 </template>
 
 <script>
-import Menu from './components/menu/menu'
+import MenuView from './components/menuView/menu'
 export default {
   name: 'App',
   components: {
-    Menu
+    MenuView
   }
 }
 </script>

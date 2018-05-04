@@ -24,6 +24,13 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  // 第三方库不打包
+  externals: {
+    'vue': 'Vue',
+    'echarts': 'echarts',
+    'axios': 'axios',
+    'element-ui': 'ELEMENT'
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

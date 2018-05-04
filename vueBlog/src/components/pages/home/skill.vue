@@ -65,7 +65,7 @@ export default {
           orient: 'vertical',
           left: '8%',
           top: '12%',
-          data: ['html', 'css', 'js', 'vue', 'echarts', 'react']
+          data: ['html', 'css', 'js', 'vue', 'echarts']
         },
         series: [
           {
@@ -175,7 +175,7 @@ export default {
 .skill{
   width: 100%;
   height: 100%;
-  margin-top: 120px;
+  margin-top: 20px;
 }
 .info{
   width: 100%;

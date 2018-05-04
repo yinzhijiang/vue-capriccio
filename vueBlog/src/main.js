@@ -3,15 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui'
-import 'font-awesome/css/font-awesome.css'
+import ELEMENT from 'element-ui'
+// import 'font-awesome/css/font-awesome.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import './style/common.less'
 import axios from 'axios'
 import echarts from 'echarts'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ELEMENT)
 window.axios = axios
 window.echarts = echarts
 /* eslint-disable no-new */

@@ -1,45 +1,69 @@
 <template>
-  <div class="banner">
-    <el-carousel :interval="5000" arrow="always" height="800px">
-      <el-carousel-item v-for="item in 4" :key="item">
-      <img :src = "require('../../../assets/images/banner_' + item + '.jpg')" alt="">
-        <!-- <h3>{{ item }}</h3> -->
-      </el-carousel-item>
-    </el-carousel>
-    <div class="card_block">
-      <h2>Hello, world.</h2>
-      <h1>I'm Jiang Yin Zhi.</h1>
-      <p class="intro-position"><span>初来乍到</span><span>多多指教</span></p>
-      <p class="intro-address">yinzhi@163.com</p>
-    </div>
-    <skill-view></skill-view>
-    <resume-view></resume-view>
-    <portfolio-view></portfolio-view>
-    <contact-view></contact-view>
-  </div>
+    <swiper :options="swiperOption" ref="mySwiper" class="swiper-container">
+      <!-- slides -->
+      <swiper-slide><bannerView/></swiper-slide>
+      <swiper-slide><skillView/></swiper-slide>
+      <swiper-slide><resumeView/></swiper-slide>
+      <swiper-slide><portfolioView/></swiper-slide>
+      <swiper-slide><contactView/></swiper-slide>
+      <!-- Optional controls -->
+      <div class="swiper-pagination"  slot="pagination"></div>
+      <div class="swiper-scrollbar"   slot="scrollbar"></div>
+    </swiper>
 </template>
 
 <script>
-import skillView from './skill'
-import contactView from './contactMe'
-import resumeView from './resume'
-import portfolioView from './portfolio'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.min.css'
+const skillView = () => import('./skill')
+const contactView = () => import('./contactMe')
+const resumeView = () => import('./resume')
+const portfolioView = () => import('./portfolio')
+const bannerView = () => import('./banner')
 export default {
   data () {
     return {
-      // src : require('../../../assets/images/img-1.jpg')
+      swiperOption: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        mousewheel: true,
+        spaceBetween: 70,
+        height: window.innerHeight,
+        notNextTick: true,
+        autoplay: 3000,
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      }
+    }
+  },
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
     }
   },
   components: {
     skillView,
     contactView,
     resumeView,
-    portfolioView
+    portfolioView,
+    bannerView,
+    swiper,
+    swiperSlide
   }
 }
 </script>
 
 <style scoped>
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
   .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
