@@ -10,39 +10,40 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+  base: 'jyz',
   routes: [
     {
-      path: '/jyz/',
+      path: '/',
       name: '／',
       component: Home
     },
     {
-      path: '/jyz/home',
+      path: '/home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/jyz/blog',
+      path: '/blog',
       name: 'Blog',
       component: Blog
     },
     {
-      path: '/jyz/contact',
+      path: '/contact',
       name: 'Contact',
       component: Contact
     },
     {
-      path: '/jyz/about',
+      path: '/about',
       name: 'about',
       component: about
     },
     {
-      path: '/jyz/tags',
+      path: '/tags',
       name: 'tags',
       component: tags
     },
     {
-      path: '/jyz/message',
+      path: '/message',
       name: 'message',
       component: message
     }
