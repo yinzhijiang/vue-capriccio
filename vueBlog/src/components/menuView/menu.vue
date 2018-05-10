@@ -20,7 +20,7 @@
 export default {
   data () {
     return {
-      menuList: ['home', 'blog', 'tags', 'portfolio', 'about', 'contact']
+      menuList: ['home', 'blog', 'tags', 'about', 'contact', 'message']
     }
   },
   methods: {

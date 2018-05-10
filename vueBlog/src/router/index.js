@@ -5,40 +5,46 @@ const Blog = () => import('../components/pages/blog')
 const Contact = () => import('../components/pages/contact')
 const about = () => import('../components/pages/about')
 const tags = () => import('../components/pages/tags')
+const message = () => import('../components/pages/message')
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/jyz/',
+      name: '／',
+      component: Home
+    },
+    {
+      path: '/jyz/home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/blog',
+      path: '/jyz/blog',
       name: 'Blog',
       component: Blog
     },
     {
-      path: '/contact',
+      path: '/jyz/contact',
       name: 'Contact',
       component: Contact
     },
     {
-      path: '/about',
+      path: '/jyz/about',
       name: 'about',
       component: about
     },
     {
-      path: '/tags',
+      path: '/jyz/tags',
       name: 'tags',
       component: tags
+    },
+    {
+      path: '/jyz/message',
+      name: 'message',
+      component: message
     }
   ]
 })
